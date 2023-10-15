@@ -1,7 +1,6 @@
 import random
 LENGTH = 20
 
-
 class GeneticAlgorithm:
     # set parameter
     def __init__(self, populNum, geneNum, selRatio, mutaNum, chromosomes, nowGeneration):
@@ -82,7 +81,7 @@ class GeneticAlgorithm:
         mutationRate = int(LENGTH*self.mutaNum)
         index = []
         for i in range(mutationRate):
-            index.append(random.randint(0, LENGTH))
+            index.append(random.randint(0, LENGTH - 1))
 
         for i in range(0, mutationRate):
             if (int(self.child1[index[i]])):
@@ -129,18 +128,8 @@ if __name__ == "__main__":
 
     #  __init__(self, populNum, geneNum, selRatio, mutaNum, chromosomes, nowGeneration)
     for i in range(userGenerate):
-        if i == 0:
-            test = GeneticAlgorithm(
-                userPopulation, userGenerate, userTournaRatio, userMutaRatio, result, i)
-            test.CreateChromo()
-            test.printChromo()
-            test.Tournament()
-            test.Crossover()
-            test.Mutation()
-            result = test.Replace()
-        else:
-            test = GeneticAlgorithm(
-                userPopulation, userGenerate, userTournaRatio, userMutaRatio, result, i)
+            test = GeneticAlgorithm(userPopulation, userGenerate, userTournaRatio, userMutaRatio, i)
+            if i == 0: test.CreateChromo()
             test.printChromo()
             test.Tournament()
             test.Crossover()
