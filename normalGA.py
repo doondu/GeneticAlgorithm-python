@@ -128,7 +128,7 @@ if __name__ == "__main__":
 
     #  __init__(self, populNum, geneNum, selRatio, mutaNum, chromosomes, nowGeneration)
     for i in range(userGenerate):
-            test = GeneticAlgorithm(userPopulation, userGenerate, userTournaRatio, userMutaRatio, i)
+            test = GeneticAlgorithm(userPopulation, userGenerate, userTournaRatio, userMutaRatio, result, i)
             if i == 0: test.CreateChromo()
             test.printChromo()
             test.Tournament()
